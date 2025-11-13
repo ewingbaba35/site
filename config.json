@@ -1,0 +1,76 @@
+{
+  "siteTitle": "Süleyman",
+  "favicon": "https://cdn.discordapp.com/avatars/774591026940739585/8eba228aa14f1e38d4bfe94cd3fb6d42.png?size=1024",
+  "personal": {
+    "name": "Süleyman",
+    "description": "Front-End Developer & Designer",
+    "introText": "click?",
+    "location": {
+      "name": "Izmir, Turkey"
+    }
+  },
+  "media": {
+    "backgroundType": "video",
+    "backgroundVideo": "https://cdn.discordapp.com/attachments/1087817754041667595/1438475167625121853/KAVAK-BIA_2.0_prod.by-ratatu.mp4?ex=691703e5&is=6915b265&hm=df922cc847644dc5053977547b5e9b041442396618fe06569d4ba9fb3fe395d8&",
+    "backgroundImage": "images/background.jpg",
+    "profileImage": "https://cdn.discordapp.com/avatars/774591026940739585/8eba228aa14f1e38d4bfe94cd3fb6d42.png?size=4096",
+    "albumCover": "images/album_cover.png",
+    "bannerImage": "images/banner.gif",
+    "profileDecoration": "images/decoration.png"
+  },
+  "socialLinks": [
+    {
+      "name": "youtube",
+      "url": "https://www.youtube.com/@ewing355",
+      "photo": "https://cdn.discordapp.com/emojis/727509251299344494.webp?size=96"
+    },
+    {
+      "name": "discord",
+      "url": "https://discord.gg/ds7mH7VAvu ",
+      "photo": "https://cdn.discordapp.com/emojis/1401887931756445787.webp?size=96"
+    },
+    {
+      "name": "email",
+      "url": "mailto:suleymancoban647@gmail.com",
+      "photo": "https://cdn.discordapp.com/emojis/816096213732163605.webp?size=96"
+    },
+    {
+      "name": "instagram",
+      "url": "https://www.instagram.com/suleymancobna",
+      "photo": "https://cdn.discordapp.com/emojis/1401887970885111828.webp?size=96"
+    }
+  ],
+  "badges": [
+  { "photo": "badges/nitro.webp", "name": "Nitro" },
+  { "photo": "badges/boost.webp", "name": "boost" },
+  { "photo": "badges/staff.webp", "name": "staff" }
+  ],
+  "music": {
+    "songTitle": "KAVAK-BIA 2.0 (prod.by-ratatu)",
+    "songUrl": "songs/song.mp3",
+    "duration": 135
+  },
+  "profileCardStyle": {
+    "color": "rgb(0,0,0)",
+    "opacity": 0.3,
+    "blur": 15
+  },
+  "musicPlayerStyle": {
+    "color": "rgb(0,0,0)",
+    "opacity": 0.3,
+    "blur": 15
+  },
+  "effects": {
+    "snowEffect": true,
+    "card3D": true,
+    "cursorFollower": true,
+    "starsAnimation": true,
+    "musicVisualizer": true,
+    "animateSiteTitle": true
+  },
+  "ui": {
+    "viewCount": 11.685,
+    "onlineStatus": true
+  },
+  "profileLayout": "vertical"
+}

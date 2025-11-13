@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>naexy | Game Developer</title>
+    <link id="dynamic-favicon" rel="icon" type="image/x-icon" href="">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: "#6366f1", secondary: '#4f46e5' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Intro Screen -->
+    <div class="intro-screen" id="intro-screen">
+        <div class="container"></div>
+        <div class="intro-text" id="intro-text">Click to enter</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="main-content">
+        <!-- Snow Container -->
+        <div id="snow-container"></div>
+
+        <!-- Cursor Follower -->
+        <div class="cursor-follower" id="cursorFollower"></div>
+
+        <!-- Background -->
+        <div class="video-background">
+            <video id="background-video" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop
+                playsinline style="display: none;">
+                <source type="video/mp4">
+            </video>
+            <div id="background-image" class="absolute inset-0 bg-cover bg-center"></div>
+        </div>
+
+        <!-- Stars -->
+        <div id="stars-container"></div>
+
+        <!-- Volume Control -->
+        <div class="absolute top-6 left-6 flex items-center gap-3 z-10">
+            <div class="w-8 h-8 flex items-center justify-center text-white">
+                <i class="ri-volume-up-line ri-lg"></i>
+            </div>
+            <input type="range" class="volume-slider" min="0" max="100" value="50" id="volume-control">
+            <div class="music-visualizer" id="visualizer" style="display: none;">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+
+        <!-- Profile Content -->
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="relative z-10 w-full max-w-2xl" id="card-group">
+                <!-- Banner Area -->
+
+                <!-- Vertical Profile Card (default) -->
+                <div class="profile-card profile-card-vertical rounded-lg pb-8 flex flex-col items-center mt-[-56px]"
+                    id="profile-card-vertical">
+                    <div id="profile-banner"
+                        class="w-full h-28 md:h-36 rounded-t-lg overflow-hidden mb-[-56px] relative flex items-end justify-center"
+                        style="background: #222;">
+                        <img id="banner-image" src="" alt="Banner"
+                            class="w-full h-full object-cover absolute inset-0 z-0" style="display: none;">
+                    </div>
+                    <div class="relative">
+                        <div class="w-28 h-28 rounded-full overflow-hidden mb-4 -4">
+                            <img id="profile-image-vertical" alt="Profile" class="w-full h-full object-cover">
+                            <img id="profile-decoration-vertical" alt="Profile Decoration" class="absolute inset-0 w-full h-full object-cover pointer-events-none" style="display: none; top: -10px;" />
+                            <div id="online-status-vertical"
+                                class="absolute bottom-3 right-3 w-4 h-4 bg-green-500 rounded-full"></div>
+                            <div id="badge-list" class="badge-box flex items-center gap-3"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative inline-block">
+                        <img src="videos/sparkle.gif" class="absolute inset-0 w-full h-full object-cover z-0 rounded"
+                            alt="sparkle bg">
+                        <h1 id="profile-name-vertical"
+                            class="relative text-2xl font-semibold text-white mb-1 z-10 px-2">naexy</h1>
+                    </div>
+                    <p id="typewriter-vertical" class="text-gray-300 mb-6 font-mono whitespace-pre"></p>
+                    <div id="badge-list" class="flex gap-2 mb-2"></div>
+                    <div class="flex gap-2 mb-6" id="social-links-vertical"></div>
+                    <div class="flex items-center gap-6 text-gray-400 text-sm pl-4">
+                        <div class="flex items-center gap-1" id="location-container-vertical">
+                            <i id="location-icon-vertical" class="ri-map-pin-line"></i>
+                            <span id="location-text-vertical">Izmir, Turkey</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-1"><i class="ri-eye-line"></i></div>
+                            <span id="view-count-vertical">832</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Player -->
+                <div class="mt-6 rounded-lg p-4 backdrop-blur-sm profile-card">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded overflow-hidden flex-shrink-0">
+                            <img id="album-cover" alt="Album Cover" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex-grow">
+                            <h3 class="text-white text-sm font-medium" id="song-title">Song Title</h3>
+                            <div class="flex justify-between text-xs text-gray-400 mt-1">
+                                <span id="current-time">0:00</span>
+                                <span id="total-time">0:00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="range" class="progress-bar mb-3" min="0" max="100" value="0" id="progress-bar">
+                    <div class="player-controls flex justify-center gap-6">
+                        <button class="w-8 h-8 flex items-center justify-center text-white" id="prev-btn"><i
+                                class="ri-skip-back-line ri-lg"></i></button>
+                        <button class="w-8 h-8 flex items-center justify-center text-white" id="play-pause-btn"><i
+                                class="ri-play-line ri-lg"></i></button>
+                        <button class="w-8 h-8 flex items-center justify-center text-white" id="next-btn"><i
+                                class="ri-skip-forward-line ri-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="audio-player" preload="auto"></audio>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
